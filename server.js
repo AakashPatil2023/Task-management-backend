@@ -6,9 +6,9 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-    origin: 'https://task-management-frontend-mocha.vercel.app/', 
+    origin: 'https://task-management-frontend-mocha.vercel.app', 
     optionsSuccessStatus: 200 
-  };
+};
 app.use(cors(corsOptions));
 
 const db = mysql.createConnection({
