@@ -4,13 +4,18 @@ const mysql = require('mysql');
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+    origin: 'https://task-management-frontend-mocha.vercel.app/', 
+    optionsSuccessStatus: 200 
+  };
+app.use(cors(corsOptions));
 
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "task_management" // Removed extra space/tab
+    database: "task_management" 
 });
 
 db.connect(err => {
