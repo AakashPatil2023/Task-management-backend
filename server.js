@@ -5,11 +5,12 @@ const mysql = require('mysql');
 const app = express();
 app.use(express.json());
 
-const corsOptions = {
-    origin: 'https://task-management-frontend-mocha.vercel.app', 
-    optionsSuccessStatus: 200 
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin: 'https://task-management-frontend-mocha.vercel.app', 
+//     optionsSuccessStatus: 200 
+// };
+// app.use(cors(corsOptions));
+app.use(cors());
 
 const db = mysql.createConnection({
     host: "localhost",
