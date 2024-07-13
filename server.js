@@ -12,10 +12,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "task_management" 
+    host: process.env.Hostname,
+    user: process.env.Username,
+    password: process.env.Password,
+    database: process.env.Database 
 });
 
 db.connect(err => {
